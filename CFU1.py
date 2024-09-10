@@ -1,3 +1,7 @@
+#09/10/2024
+#01 and 02
+#Nabila Raisa
+
 fname= input("Your first name")
 lname= input("Your last name")
 color= input("Favorite color")

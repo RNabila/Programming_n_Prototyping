@@ -1,5 +1,5 @@
 #09/10/2024
-#01 and 02
+#01 and 02 period
 #Nabila Raisa
 
 fname= input("Your first name")

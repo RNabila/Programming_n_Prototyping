@@ -1,3 +1,11 @@
+'''
+Nabila raisa
+Period 1 and 2
+09/24/2024
+In this code, I used import math to make it easier for me to use advanced operations to calculate the 
+discriminant and the roots of the quadratic formula.
+'''
+
 import math
 
 name = input("What is your name? ")

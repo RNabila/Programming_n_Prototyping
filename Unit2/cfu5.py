@@ -1,30 +1,40 @@
 #Nabila Raisa, 09/30, period: 1 and 2, CFU#5
 
 pennies = int(input("How many pennies do you have?"))
-print("Great! You have " + str(pennies))
+print("Great! You have " + str(pennies) + " pennies")
 
-nickles = int(input("How many nickles do you have?"))
-print("Great! You have " + str(nickles))
+nickels = int(input("How many nickels do you have?"))
+print("Great! You have " + str(nickels) + " nickles")
 
 dimes = int(input("How many dimes do you have?"))
-print("Great! You have " + str(dimes))
+print("Great! You have " + str(dimes) + " dimes")
 
 quarters = int(input("How many quarters do you have?"))
-print("Great! You have " + str(quarters))
+print("Great! You have " + str(quarters) + " quarters")
 
 loonies = int(input("How many loonies do you have?"))
-print("Great! You have " + str(loonies))
+print("Great! You have " + str(loonies) + " loonies")
 
 toonies = int(input("How many toonies do you have?"))
-print("Great! You have " + str(toonies))
+print("Great! You have " + str(toonies) + " toonies!")
 
 
-total_cents= pennies * 1 + nickles * 5 + dimes * 10 + quarters * 25 + loonies * 100 + toonies * 200
+total_cents= (pennies + nickels * 5 + dimes * 10 + quarters * 25 + loonies * 100 + toonies * 200) / 100
+print ("Total value of coins: $" + "{:.2f}".format(total_cents))
+total_dollars= total_cents // 1
+print(total_dollars)
+change = total_cents - total_dollars
 
-dollars= total_cents // 100 #The double division is so the output is a whole number
-cents= total_cents % 100 #this is to get the remaining cents
+remainder_in_quarters = (change) % 4
 
-print(f"\nTotal amount: ${total_cents / 100:.2f}")
+inQrts = int(change * 4)
+inDimes = int(change * 10) - inQrts
+inNickels= int(change*20)- (inDimes * 2)
+inCents = int(change*100)- (inNickels*5)- (inDimes * 10)
 
-print(f"That's {dollars} dollars, and {cents} cents.")
+print (f"Your total is: ${total_dollars}, {inQrts} quarters, {inDimes} dime, {inNickels} nickles and {inCents} cents.")
+
+
+
+
 

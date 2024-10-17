@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); // Start hiding the loading screen after 5 seconds
 });
 
-const audio = new Audio('{{ url_for('static', filename='quill-scratch.mp3') }}');
+const audio = new Audio('{{ url_for('static', filename='write.mp3') }}');
 setTimeout(() => {
     audio.play();
 }, 1000); // Play sound as the quote fades in

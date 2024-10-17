@@ -19,6 +19,7 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    transition: opacity 2s ease-in-out;
 }
 
 #candle-flame {
@@ -27,12 +28,12 @@ body, html {
     background-color: #ff9d00;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     box-shadow: 0 0 20px #ff9d00, 0 0 60px #ff9d00, 0 0 100px #ff9d00;
-    animation: flicker 0.5s infinite alternate;
+    animation: flicker 0.3s infinite alternate;
 }
 
 @keyframes flicker {
     0% { transform: scale(1); }
-    100% { transform: scale(0.9); }
+    100% { transform: scale(0.95); }
 }
 
 #quote, #name {
@@ -51,4 +52,6 @@ body, html {
 
 #main-content {
     padding: 20px;
+    display: none;
+    opacity: 0;
 }

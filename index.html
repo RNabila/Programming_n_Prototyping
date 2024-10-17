@@ -1,39 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Junior Portfolio</title>
-  <link href="sampleCSS.css" rel="stylesheet" type="text/css" />
-	<link href="favicon.png" rel="icon" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Cinzel&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="banner">
-		Thomas A. Edison CTE HS
-		<img src="avatar.png" id="logo">
-		<h1>Web Development</h1>
-		<h1>Programming and Prototyping</h1>
-		<h1>School Year 2024-25</h1>
-		<h1>Nabila Raisa</h1>
-		
-	</div>
-	<div class="container">
-		<iframe frameborder="0" width="50%" height="50%" 
-        src="https://py3.codeskulptor.org/#user309_frkCXMOiTz_0.py"></iframe>
-		<iframe frameborder="0" width="100%" height="900px" 
-        src="https://py3.codeskulptor.org/#user308_1gK1mPolQKk7FMj.py"></iframe>
-		https://py3.codeskulptor.org/#user309_frkCXMOiTz_0.py
-	</div>
-	<div class="menu">MENU
-        <a href="">Home</a>
-	<a href="">CFUs</a>
-	<a href="">Labs</a>
-	<a href="">Projects</a>
-	
-	<a href="">About</a>
-	<a href="">Code Skulptor 3</a>
+    <div id="loading-screen">
+        <div id="candle-flame"></div>
+        <div id="quote">The king may rule the kingdom, but it's the queen who moves the board.</div>
+        <div id="name">Nabila Raisa</div>
+    </div>
 
-	</div>
+    <main id="main-content" style="display: none;">
+        <!-- Your main portfolio content will go here -->
+        <h1>Welcome to My Portfolio</h1>
+    </main>
 
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-
 </html>

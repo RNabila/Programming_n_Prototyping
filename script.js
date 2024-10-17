@@ -27,3 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000); // Wait for loading screen to fully fade out before showing main content
     }, 5000); // Start hiding the loading screen after 5 seconds
 });
+
+const audio = new Audio('{{ url_for('static', filename='quill-scratch.mp3') }}');
+setTimeout(() => {
+    audio.play();
+}, 1000); // Play sound as the quote fades in

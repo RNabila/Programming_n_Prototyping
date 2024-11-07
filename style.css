@@ -1,3 +1,4 @@
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,17 @@
 
 body {
     font-family: 'Crimson Text', serif;
-    background-color: #f4f4f4;
+    background-color: #f0f0f5; /* Light background for contrast */
     color: #333;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
+/* Main content wrapper */
 #main-content {
     display: flex;
     justify-content: center;
@@ -20,46 +27,64 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
+/* Banner styles */
+.banner {
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    padding: 40px;
+    border: 2px solid #444; /* Border added for emphasis */
+    border-radius: 15px; /* Rounded corners for soft look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    max-width: 600px;
+    width: 90%;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth entrance transition */
+}
+
+/* Fade-in effect */
 #main-content.show {
     opacity: 1;
 }
 
-.banner {
-    text-align: center;
-    background: #333;
-    color: #fff;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    width: 90%;
-}
-
+/* Title and text styles */
 .banner h1 {
     font-size: 3em;
     font-family: 'Cinzel', serif;
+    color: #2d3e50; /* Darker color for header */
     margin-bottom: 10px;
+    letter-spacing: 2px; /* Added letter-spacing for elegance */
 }
 
 .banner h2 {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    color: #4a4a4a; /* Slightly lighter gray */
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .banner h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #6d6d6d; /* Lighter color for secondary info */
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
 .banner h4 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-family: 'Special Elite', cursive;
-    margin-top: 10px;
+    color: #8e8e8e;
+    margin-top: 15px;
 }
 
+/* Hover effect to slightly enlarge the banner */
+.banner:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .banner {
-        padding: 30px 15px;
+        padding: 30px 20px;
     }
 
     .banner h1 {
@@ -71,10 +96,10 @@ body {
     }
 
     .banner h3 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .banner h4 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }

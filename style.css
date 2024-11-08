@@ -65,9 +65,9 @@ nav a:hover {
 
 .cfu-item iframe {
     width: 100%;
-    height: 250px;
-    border: none;
+    height: 300px; /* Increased from 250px to 300px */
 }
+
 
 /* Projects grid */
 .projects-grid {

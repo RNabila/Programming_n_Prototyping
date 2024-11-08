@@ -61,7 +61,7 @@ nav a:hover {
     padding: 1rem;
     background-color: #fff;
     min-height: 500px;
-    min-width: 400px;
+    width: 600px;
 }
 
 .cfu-item iframe {

@@ -1,37 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junior Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Cinzel&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .cfu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .cfu-item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            min-height: 300px;
+        }
+        
+        .cfu-item iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .project-item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            min-height: 400px;
+        }
+        
+        .project-item iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+    </style>
 </head>
-
 <body>
-    
-        <div class="banner">
-            <h1>Welcome to My Portfolio</h1>
-            <h2>Nabila Raisa</h2>
-            <h3>Thomas A. Edison CTE High School</h3>
-            <h4>11/07/2024</h4>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="cfus.html">Check for Understanding</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="container" id="home">
+        <div class="profile-section">
+            <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-img">
+            <h1>Your Name</h1>
+            <p>Your Title / Role</p>
+            <p>A brief description about yourself and your expertise.</p>
         </div>
+    </div>
 
-        <div class="content">
-            <a href= CFU's.html> Check for Understanding </a> 
-            <a href = Labs.html> Project Stem Labs!</a>
-            
+    <!-- Check for Understanding Page -->
+    <div class="container" id="cfus">
+        <h2>Check for Understanding</h2>
+        <div class="cfu-grid">
+            <!-- Repeat this structure 12 times for each CFU -->
+            <div class="cfu-item">
+                <h3>CFU 1</h3>
+                <iframe src="path-to-your-cfu1-flowchart"></iframe>
+            </div>
+            <!-- Additional CFU items would go here -->
         </div>
+    </div>
 
-
-    <script>
-        window.onload = function () {
-            setTimeout(function () {
-                document.getElementById("main-content").style.display = "block";
-            }, 1000); 
-        };
-    </script>
+    <!-- Projects Page -->
+    <div class="container" id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <h3>Project 1</h3>
+                <iframe src="path-to-your-project1"></iframe>
+                <p>Project description goes here</p>
+            </div>
+            <!-- Additional project items would go here -->
+        </div>
+    </div>
 </body>
-
 </html>

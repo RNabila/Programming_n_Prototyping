@@ -432,6 +432,7 @@ h2::after {
     background-color: rgba(212, 165, 165, 0.1);
     border-radius: 5px;
     min-height: 400px;
+    width: 100px;
 }
 
 /* Back button styles */

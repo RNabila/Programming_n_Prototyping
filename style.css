@@ -141,21 +141,77 @@ nav a:hover {
 }
 
 /* CFU grid */
+/* Updated CFU grid styles */
 .cfu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr); /* Changed to always show 2 columns */
+    gap: 2rem;
     margin: 2rem 0;
+    padding: 0 2rem;
 }
 
 .cfu-item {
     border: 1px solid rgba(212, 165, 165, 0.1);
-    padding: 1.5rem;
+    padding: 2rem; /* Increased padding */
     background-color: var(--card-background);
-    min-height: 300px;
+    min-height: 450px; /* Increased minimum height */
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    width: 100%; /* Ensure full width within grid cell */
+}
+
+.cfu-item iframe {
+    width: 100%;
+    height: 450px; /* Increased height */
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Extended CFU items for flowcharts (CFU 10-12) */
+.cfu-extended {
+    grid-column: span 2; /* Spans full width for the flowchart CFUs */
+}
+
+.cfu-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Adjusted ratio for code vs flowchart */
+    gap: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cfu-grid {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .cfu-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    
+    .cfu-extended {
+        grid-column: span 1;
+    }
+    
+    .cfu-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cfu-item {
+        min-height: 400px;
+    }
+}
+
+/* Container width adjustment */
+.container {
+    max-width: 1400px; /* Increased from 1200px */
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    position: relative;
 }
 
 .cfu-item:hover {

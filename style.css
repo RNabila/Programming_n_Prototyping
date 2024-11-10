@@ -141,93 +141,195 @@ nav a:hover {
 }
 
 /* CFU grid */
-/* Updated CFU grid styles */
 .cfu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to always show 2 columns */
-    gap: 2rem;
-    margin: 2rem 0;
-    padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin: 2rem 0;
+  padding: 0 2rem;
 }
 
+/* Card styles */
 .cfu-item {
-    border: 1px solid rgba(212, 165, 165, 0.1);
-    padding: 2rem; /* Increased padding */
-    background-color: var(--card-background);
-    min-height: 450px; /* Increased minimum height */
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    width: 100%; /* Ensure full width within grid cell */
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
 }
 
-.cfu-item iframe {
-    width: 100%;
-    height: 450px; /* Increased height */
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
-/* Extended CFU items for flowcharts (CFU 10-12) */
-.cfu-extended {
-    grid-column: span 2; /* Spans full width for the flowchart CFUs */
-}
-
-.cfu-content {
-    display: grid;
-    grid-template-columns: 3fr 2fr; /* Adjusted ratio for code vs flowchart */
-    gap: 2rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .cfu-grid {
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .cfu-grid {
-        grid-template-columns: 1fr; /* Stack on smaller screens */
-    }
-    
-    .cfu-extended {
-        grid-column: span 1;
-    }
-    
-    .cfu-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .cfu-item {
-        min-height: 400px;
-    }
-}
-
-/* Container width adjustment */
-.container {
-    max-width: 1400px; /* Increased from 1200px */
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    position: relative;
+.cfu-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .cfu-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 165, 165, 0.3);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+.cfu-item:hover::before {
+  opacity: 1;
+}
+
+/* Card headers */
 .cfu-item h3 {
-    color: var(--secondary-color);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(212, 165, 165, 0.2);
-    padding-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* iframes */
+.cfu-item iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: calc(var(--border-radius) - 4px);
+  background: #f8f9fa;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Extended CFU items */
+.cfu-extended {
+  grid-column: span 2;
+}
+
+.cfu-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.flowchart-space img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.flowchart-space img:hover {
+  transform: scale(1.02);
+}
+
+/* Navigation styles */
+nav {
+  background: var(--primary-color);
+  padding: 1.5rem 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer styles */
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+}
+
+.contact-info {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .cfu-grid {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .cfu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cfu-extended {
+    grid-column: span 1;
+  }
+  
+  .cfu-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cfu-item {
+    min-height: 450px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .cfu-item {
+    padding: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 
 /* Projects grid */

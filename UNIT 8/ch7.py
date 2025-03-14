@@ -1,3 +1,5 @@
+#nabila raisa 01 and 02. 03-14-2025
+
 import turtle
 
 def draw(t, length, n):
